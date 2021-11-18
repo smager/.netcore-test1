@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+}
+ 
+<div class="page-wrapper">
+    <div class="page-inner">
+        <div class="page-content-wrapper bg-transparent m-0">
+            <div class="height-10 w-100 shadow-lg px-4 bg-brand-red">
+                <div class="d-flex align-items-center container p-0">
+                    <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9">
+                        <a href="/" class="page-logo-link press-scale-down d-flex align-items-center navbar-brand text-white">
+                            <img src='@Url.Content("~/")img/logo.jpg'  aria-roledescription="logo" class="mr-2">
+                            
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="flex-1" background-size: cover;">
+                <div class="container py-4 py-lg-5 px-4 px-sm-0">
+                    <div class="row">
+                        <div class="col col-md-6 col-lg-7 hidden-sm-down zsi-home-color">
+                            
+                             
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 ml-auto col-xs-12">
+                            <h1 class="text-white d-sm-block">
+                                Sign In
+                            </h1>
+                            <div class="card p-4 rounded-plus bg-brand-dark">
+                                <form id="frmLogin" method="post" action='@Url.Content("~/")account/validate'>
+                                    <div class="form-group has-validation">
+                                        <label class="form-label" for="validationCustomUsername">Username</label>
+                                        <input type="text" name="username" class="form-control form-control-sm" id="validationCustomUsername" placeholder="Username" required>
+
+                                    </div>
+
+
+                                    <div class="form-group has-validation">
+                                        <label class="form-label" for="validationCustomPassword">Password</label>
+                                        <input type="password" name="password" class="form-control form-control-sm" id="validationCustomPassword" placeholder="Password" required>
+
+                                    </div>
+
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-12 pl-lg-1 my-2">
+
+                                            <button class="btn btn-primary" type="submit">Log In</button>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

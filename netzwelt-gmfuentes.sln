@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netzwelt-gmfuentes", "netzwelt-gmfuentes.csproj", "{E2B0D7B2-D8E3-4BB6-8C9C-AD07F117CB0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2B0D7B2-D8E3-4BB6-8C9C-AD07F117CB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B0D7B2-D8E3-4BB6-8C9C-AD07F117CB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B0D7B2-D8E3-4BB6-8C9C-AD07F117CB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B0D7B2-D8E3-4BB6-8C9C-AD07F117CB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14AEB59E-3226-436E-8556-2BDBBCA1A882}
+	EndGlobalSection
+EndGlobal
