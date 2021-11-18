@@ -1,8 +1,93 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    ul, #myUL {
+        list-style-type: none;
+    }
 
+    #myUL {
+        margin: 0;
+        padding: 0;
+    }
+
+    .crt {
+        cursor: pointer;
+        -webkit-user-select: none; /* Safari 3.1+ */
+        -moz-user-select: none; /* Firefox 2+ */
+        -ms-user-select: none; /* IE 10+ */
+        user-select: none;
+    }
+
+        .crt::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+    .crt-down::before {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Safari */
+        ' transform: rotate(90deg);
+    }
+
+    .nested {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+</style>
  
 <div class="row">
-    Home page
+    <h1>Territories</h1>
+
+    <h3>Here are the list of territories</h3>
+    @{
+        List<Territory> list = ViewBag.Territories;
+        WriteLiteral("<ul id=\"myUL\"> ");
+        ShowTree(list);
+        WriteLiteral("</ul> ");
+
+    }
+
+    @functions{
+        private void ShowTree(List<Territory> list)
+        {
+
+            if (list != null)
+            {
+                foreach (var item in list)
+                {
+
+                    WriteLiteral("\r\n<li "  + (item.Children.Count > 0 ? "class=\"crt\"" : "") + ">");
+
+                    WriteLiteral("<span>" + @item.Name + "</span>");
+                    if(item.Children.Any()){
+                        WriteLiteral("<ul class='nested'>");
+                        ShowTree(item.Children);
+                        WriteLiteral("</ul>");
+                    }
+                    WriteLiteral("\r\n</li> ");
+                }
+            }
+
+        }
+    }
+
 </div>
+<script>
+    
+    var toggler = document.getElementsByClassName("crt");
+    var i;
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function (e) {
+            //fixed the problem code here and disabled the bubble effects.
+            this.classList.toggle("crt-down");
+            this.querySelector(".nested").classList.toggle("active");
+            e.cancelBubble = true;
+        });
+    }
+</script>
